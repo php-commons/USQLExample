@@ -1,0 +1,17 @@
+﻿DROP FUNCTION IF EXISTS GenerateRowSet;
+
+CREATE FUNCTION GenerateRowSet(@count int)
+RETURNS @rows TABLE(val int)
+AS
+BEGIN
+    @rows =
+        SELECT val
+        FROM(
+            VALUES
+            (
+                1
+            )) AS v(x)
+            CROSS APPLY
+                EXPLODE(Enumerable.Range(0, @count)) AS T(val);
+RETURN;
+END;                                            

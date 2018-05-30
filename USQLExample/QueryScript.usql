@@ -1,0 +1,23 @@
+﻿@input =
+    EXTRACT firstName string,
+            lastName string,
+            addressLine string,
+            city string,
+            state string,
+            zipCode string,
+            __filenum int
+    FROM "/output/test{__filenum}.csv"
+    USING Extractors.Csv();
+
+@output =
+    SELECT firstName,
+           lastName
+    FROM @input
+    WHERE firstName.StartsWith("D") && lastName.StartsWith("C");
+    
+OUTPUT @output
+TO "query/example.csv"
+USING Outputters.Csv();
+
+
+   

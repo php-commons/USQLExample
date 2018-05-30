@@ -20,13 +20,17 @@
     <OutputPath>bin\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Script Include="QueryScript.usql" />
     <Script Include="RowSetGenerator.usql" />
-    <Script Include="Script.usql" />
+    <Script Include="CreateScript.usql" />
+    <ScriptCode Include="QueryScript.usql.cs">
+      <DependentUpon>QueryScript.usql</DependentUpon>
+    </ScriptCode>
     <ScriptCode Include="RowSetGenerator.usql.cs">
       <DependentUpon>RowSetGenerator.usql</DependentUpon>
     </ScriptCode>
-    <ScriptCode Include="Script.usql.cs">
-      <DependentUpon>Script.usql</DependentUpon>
+    <ScriptCode Include="CreateScript.usql.cs">
+      <DependentUpon>CreateScript.usql</DependentUpon>
     </ScriptCode>
   </ItemGroup>
   <!-- check for SDK Build target in current path then in USQLSDKPath in the case of command line build -->

@@ -50,7 +50,3 @@ Rerun the script. See how much longer the job took. As a bonus exercise, keep bu
 # Exercise Three: Rescaling 
 
 Modify the CreateScript.usql file script that will optimally use 4 AUs to create a million records and verify that this is true by using the tools. 
-
-# Exercise Four: Queries
-
-
